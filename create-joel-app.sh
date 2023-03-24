@@ -2,25 +2,9 @@
 
 # Usage: npx create-joel-app@latest luxpremierllc.com
 
-npx create-next-app@13 --typescript --use-npm "$1"
+npx create-next-app@13 --typescript --use-npm --eslint "$1"
 cd "$1"
 npm i @jcomponents/header @jcomponents/nav @jcomponents/button
-
-### Tailwind ###
-npm install -D tailwindcss
-npx tailwindcss init
-echo '''
-/** @type {import("tailwindcss").Config} */ 
-module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-}
-''' > tailwind.config.js
 mkdir src/components
 mkdir public/images
 
@@ -35,6 +19,11 @@ mv files-to-transfer/Page.tsx      src/components
 mv files-to-transfer/index.tsx     src/pages/index.tsx
 mv files-to-transfer/logo.png      public/images/logo.png
 mv files-to-transfer/tsconfig.json .
+
+### Tailwind ###
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+mv files-to-transfer/tailwind.config.js .
 
 
 ### Clear Files ###
