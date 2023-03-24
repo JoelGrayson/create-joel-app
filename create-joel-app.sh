@@ -2,7 +2,7 @@
 
 # Usage: npx create-joel-app@latest luxpremierllc.com
 
-npx create-next-app^13.2.4 --typescript --use-npm "$1"
+npx create-next-app@13 --typescript --use-npm "$1"
 cd "$1"
 npm i @jcomponents/header @jcomponents/nav @jcomponents/button
 
