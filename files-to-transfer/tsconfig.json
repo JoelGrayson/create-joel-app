@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"],
-      "@/helpers/*": ["helpers/*"]
+      "@/components/*": ["src/components/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/helpers/*": ["src/helpers/*"]
     },
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],

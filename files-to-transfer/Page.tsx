@@ -17,7 +17,7 @@ export default function Page({children, noheader=false, title, padding, ...props
     return <>
         {/* Metadata */}
         <Head>
-            <title>{title || 'NAME_INSERTED_HERE'}</title>
+            <title>{title}</title>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@ export default function Page({children, noheader=false, title, padding, ...props
                 <div> {/* Left */}
                     <Link href='/'>
                         <Image src='/images/logo.png' alt='logo' width={80} height={80} />
-                        <span>NAME_INSERTED_HERE</span>
+                        <span>Insert Your Name</span>
                     </Link>
                 </div>
                 <div> {/* Right */}
