@@ -28,8 +28,7 @@ export default function Page({children, noheader=false, title, padding, ...props
             <Header>
                 <div> {/* Left */}
                     <Link href='/'>
-                        <Image src='/images/logo.png' alt='logo' width={80} height={80} />
-                        <span>Insert Your Name</span>
+                        <Image src='/images/logo.png' alt='logo' width={70} height={70} />
                     </Link>
                 </div>
                 <div> {/* Right */}
