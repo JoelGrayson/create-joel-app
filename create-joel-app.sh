@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: npx create-joel-app@latest luxpremierllc.com
+# Usage: npx create-joel-app your-package-name
 
 npx create-next-app@13 --typescript --use-npm --eslint "$1"
 cd "$1"
