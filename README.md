@@ -1,5 +1,5 @@
-<p align="center"><h1>Create-Joel-App</h1></p>
+<h1 align="center">npx create-joel-app</h1>
 
-`npx create-joel-app your-app-name`
+Create-Joel-App creates a new Next.js app with Tailwind.css, a page component including headers if you want, nice default styles for all pages, and minimal TypeScript configurations. It allows you to get started with your Next.js app without worrying about initial configuration. It is more minimalist than create-t3-app and has no learning curve.
 
-Create-Joel-App creates a new Next.js app with a header, page component, next.js, nice default styles for any pages, and minimal typescript configurations. It allows you to get started with your Next.js app without worrying about first configuring. It is more minimalist than create-t3-app and has no learning curve.
+Usage: `npx create-joel-app your-app-name`
