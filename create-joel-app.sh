@@ -22,7 +22,7 @@ module.exports = {
 }
 ''' > tailwind.config.js
 mkdir src/components
-
+mkdir public/images
 
 ### Files-to-transfer ###
 curl -L https://joelgrayson.com/software/create-joel-app/files-to-transfer.tgz -o files-to-transfer.tgz
