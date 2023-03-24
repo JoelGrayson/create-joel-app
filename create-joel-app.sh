@@ -42,3 +42,7 @@ rm -rf files-to-transfer
 echo "# $1" > README.md
 rm src/styles/Home.module.css
 
+
+### Starting Up ###
+open http://localhost:3000
+npm run dev

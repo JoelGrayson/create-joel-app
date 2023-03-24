@@ -3,7 +3,7 @@
   "author": "Joel Grayson",
   "main": "./create-joel-app.sh",
   "bin": "create-joel-app.sh",
-  "version": "0.1.11",
+  "version": "1.0.0",
   "dependencies": {},
   "scripts": {
     "start": "bash create-joel-app.sh"
