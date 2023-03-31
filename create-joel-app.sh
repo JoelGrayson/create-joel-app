@@ -1,12 +1,27 @@
 #!/bin/bash
 
 # Usage: npx create-joel-app your-package-name
+#     or npx -y create-joel-app@latest your-package-name
 
-npx create-next-app@13 --typescript --use-npm --eslint "$1"
+read -rp "Would you like to include jredirects (easy redirect management)? (y/n) " include_redirects
+[[ $include_redirects == "y" || $include_redirects == "yes" ]] && echo "Including jredirects" || echo "Not including jredirects"
+
+### Installing Next ###
+npx -y create-next-app@13 --typescript --use-npm --eslint --import-alias '@/*' "$1"
 cd "$1"
 npm i @jcomponents/header @jcomponents/nav @jcomponents/button
 mkdir src/components
 mkdir public/images
+
+
+### JRedirects ###
+if [[ $include_redirects == "y" || $include_redirects == "yes" ]]; then
+    curl -L https://joelgrayson.com/software/create-joel-app/jredirects.tgz -o jredirects.tgz
+    tar -xf jredirects.tgz
+
+    mv jredirects/next.config.js .
+fi
+
 
 ### Files-to-transfer ###
 curl -L https://joelgrayson.com/software/create-joel-app/files-to-transfer.tgz -o files-to-transfer.tgz
@@ -19,6 +34,7 @@ mv files-to-transfer/Page.tsx      src/components
 mv files-to-transfer/index.tsx     src/pages/index.tsx
 mv files-to-transfer/logo.png      public/images/logo.png
 mv files-to-transfer/tsconfig.json .
+
 
 ### Tailwind ###
 npm install -D tailwindcss postcss autoprefixer
