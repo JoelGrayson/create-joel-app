@@ -1,6 +1,15 @@
 import { nextRedirects, redirects, src, dest, nextRedirect } from "./types";
+import { permanent, temporary } from '../REDIRECTS';
 
-export default function processRedirects(input: redirects, isPermanent: boolean) {
+export default function redirects() { //returns function to get redirect objects for next.config.js. Only async ∵ next.js documentation requires async functions for redirect value
+    // Combine redirects
+    const arr1=processRedirects(permanent, true);
+    const arr2=processRedirects(temporary, false);
+
+    return arr1.concat(arr2); //return merged permanent & temporary arrays
+}
+
+export function processRedirects(input: redirects, isPermanent: boolean) {
     const output: nextRedirects=[];
 
     Object.entries(input).forEach(([key, val])=>{

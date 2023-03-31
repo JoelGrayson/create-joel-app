@@ -10,7 +10,7 @@ echo "Current version: $(jq '.version' package.json)"
 read -rp "New version: " new_version
 
 # Update to new version
-jq ".version=\"$new_version\"" package.json > tmp; cat tmp > package.json; rm tmp;
+jq ".version=\"$new_version\"" package.json > tmp; cat tmp > package.json; rm tmp
 
 # Deploy
 npm publish

@@ -20,6 +20,9 @@ if [[ $include_redirects == "y" || $include_redirects == "yes" ]]; then
     tar -xf jredirects.tgz
 
     mv jredirects/next.config.js .
+
+    # Make `npm run jredirects` script
+    jq ".scripts.jredirects=\"cd jredirects && ./build.sh\"" package.json > tmp; cat tmp > package.json; rm tmp;
 fi
 
 
