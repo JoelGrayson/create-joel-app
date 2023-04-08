@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const jredirects=require('./redirect/main');
+const jredirects=require('./jredirects/dist/main').default();
 
 module.exports={
     reactStrictMode: true,

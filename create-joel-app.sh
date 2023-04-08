@@ -4,7 +4,7 @@
 #     or npx -y create-joel-app@latest your-package-name
 
 read -rp "Would you like to include jredirects (easy redirect management)? (y/n) " include_redirects
-[[ $include_redirects == "y" || $include_redirects == "yes" ]] && echo "Including jredirects" || echo "Not including jredirects"
+[[ $include_redirects == "y" || $include_redirects == "yes" || $include_redirects == "" ]] && echo "Including jredirects" || echo "Not including jredirects"
 
 ### Installing Next ###
 npx -y create-next-app@13 --typescript --use-npm --eslint --import-alias '@/*' "$1"
@@ -15,9 +15,11 @@ mkdir public/images
 
 
 ### JRedirects ###
-if [[ $include_redirects == "y" || $include_redirects == "yes" ]]; then
+if [[ $include_redirects == "y" || $include_redirects == "yes" || $include_redirects == "" ]]; then
+    echo "Downloading jredirects.tgz from joelgrayson.com/software/create-joel-app/jredirects.tgz"
     curl -L https://joelgrayson.com/software/create-joel-app/jredirects.tgz -o jredirects.tgz
     tar -xf jredirects.tgz
+    rm jredirects.tgz
 
     mv jredirects/next.config.js .
 
