@@ -4,9 +4,11 @@
   "main": "./create-joel-app.sh",
   "bin": "create-joel-app.sh",
   "version": "1.0.7",
-  "dependencies": {},
   "scripts": {
     "start": "bash create-joel-app.sh"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11"
+  }
 }

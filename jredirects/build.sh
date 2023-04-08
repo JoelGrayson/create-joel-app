@@ -2,10 +2,7 @@
 
 rm -rf compiled-js dist.js
 tsc
-(
-    cd compiled-js
-    echo -n 'const redirects=' > ../dist.js
-    node main >> ../dist.js
-    printf ';\n\nexport default redirects;\n' >> ../dist.js
-)
+echo -n 'const jredirects=async ()=>' > dist.js
+node ./compiled-js/_internals/processRedirects >> dist.js
+printf '; //must be a function that returns a promise\n\nmodule.exports=jredirects;\n' >> dist.js
 rm -rf compiled-js
