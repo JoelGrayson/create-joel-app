@@ -54,5 +54,5 @@ rm src/styles/Home.module.css
 
 
 ### Starting Up ###
-open http://localhost:3000
+( sleep 2 && open http://localhost:3000 ) & #open after giving npm run dev time to start up
 npm run dev
