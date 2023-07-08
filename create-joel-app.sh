@@ -25,6 +25,9 @@ if [[ $include_redirects == "y" || $include_redirects == "yes" || $include_redir
 
     # Make `npm run jredirects` script
     jq ".scripts.jredirects=\"cd jredirects && ./build.sh\"" package.json > tmp; cat tmp > package.json; rm tmp;
+
+    # Initial creation of jredirects folder
+    npm run jredirects
 fi
 
 
